@@ -10,6 +10,11 @@ import br.com.validacaoxml.validacao.ValidacaoXML;
 
 public class ValidadorApplication {
 
+	private static final String FILE_XSD = "shiporder.xsd";
+	private static final String FILE_XML_SEM_ERROS = "shiporder_sem_erro.xml";
+	private static final String FILE_XML_COM_ERROS = "shiporder_com_erro.xml";
+	private static final String MSG_VALIDACAO_SUCESSO = "XML validado com sucesso!";
+
 	public static void main(String[] args) {
 
 		ValidacaoXML validacao = new ValidacaoXML();
@@ -19,12 +24,12 @@ public class ValidadorApplication {
 			//String caminhoxml = args[0];
 			//String caminhoxsd = args[1];
 			
-			File arquivoXml = new File("shiporder_sem_erro.xml");
-			File arquivoXsd = new File("shiporder.xsd");
+			File arquivoXml = new File(FILE_XML_COM_ERROS);
+			File arquivoXsd = new File(FILE_XSD);
 			
 			validacao.valida(arquivoXml, arquivoXsd);
 			
-			Util.exibirDialogoSucesso("XML validado com sucesso!");
+			Util.exibirDialogoSucesso(MSG_VALIDACAO_SUCESSO);
 		} catch (InfraExecption ie) {
 			Util.exibirDialogoErro(ie.getMessage());
 		} catch (SAXParseException se) {
