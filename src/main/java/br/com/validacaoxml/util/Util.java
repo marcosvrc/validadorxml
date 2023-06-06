@@ -12,12 +12,7 @@ import br.com.validacaoxml.exeception.InfraExecption;
  *
  */
 public class Util {
-	
-	/**
-	 * Formata a mensagem em caso de erro de validação do XML.
-	 * @param se objeto do tipo SAXParseException
-	 * @return mensagem formatada
-	 */
+
 	public static String obterMsgFormatada(SAXParseException se) {
 		StringBuilder msgFormatada = new StringBuilder();
 		msgFormatada.append("Linha do erro: ");
