@@ -19,13 +19,13 @@ public class ValidadorApplication {
 
 		ValidacaoXML validacao = new ValidacaoXML();
 		try {
-			//validarArgumentos(args);
+			Util.validarArgumentos(args);
 			
-			//String caminhoxml = args[0];
-			//String caminhoxsd = args[1];
+			String caminhoxml = args[0];
+			String caminhoxsd = args[1];
 			
-			File arquivoXml = new File(FILE_XML_COM_ERROS);
-			File arquivoXsd = new File(FILE_XSD);
+			File arquivoXml = new File(caminhoxml);
+			File arquivoXsd = new File(caminhoxsd);
 			
 			validacao.valida(arquivoXml, arquivoXsd);
 			
