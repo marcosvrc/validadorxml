@@ -1,8 +1,9 @@
 package br.com.validacaoxml;
 
 import br.com.validacaoxml.validacao.ValidacaoXML;
+import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+
 import org.xml.sax.SAXParseException;
 
 import java.io.File;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 public class ValidadorApplicationTest{
+
 
 	@Test
 	@DisplayName("Validar XML válido")
@@ -21,7 +23,7 @@ public class ValidadorApplicationTest{
 	
 	@Test()
 	@DisplayName("Validar XML inválido")
-	public void validarXmlInvalidoTest() throws Exception {
+	public void validarXmlInvalidoTest()  {
 
 		SAXParseException saxParseException = assertThrows(SAXParseException.class, () -> {
 			ValidacaoXML validacao = new ValidacaoXML();
